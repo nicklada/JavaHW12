@@ -6,16 +6,15 @@ import ru.netology.domain.Smartphone;
 import ru.netology.repository.ProductRepository;
 
 public class ProductManager {
-    private ProductRepository repository = new ProductRepository();
+    private ProductRepository repository;
+
     public ProductManager(ProductRepository repository){
         this.repository=repository;
     }
 
-
-    public void ProductAdd(Product item) {
+    public void productAdd(Product item) {
         repository.save(item);
     }
-
 
     public Product[] searchBy(String text) {
         Product[] result = new Product[0];

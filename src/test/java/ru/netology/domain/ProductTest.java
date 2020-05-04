@@ -14,6 +14,7 @@ class ProductTest {
         boolean actual = product.matches(textToFind);
         assertEquals(expected, actual);
     }
+
     @Test
     void shouldMatchByNameIfNotExists() {
         String textToFind = "Story2";

@@ -24,9 +24,6 @@ public class Smartphone extends Product {
         if (super.matches(search)) {
             return true;
         }
-        if (producer.equalsIgnoreCase(search)) {
-            return true;
-        }
-        return false;
+        return producer.equalsIgnoreCase(search);
     }
 }

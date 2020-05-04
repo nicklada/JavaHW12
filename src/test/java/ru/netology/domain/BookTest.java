@@ -10,29 +10,29 @@ class BookTest {
     @Test
     void shouldMatchByNameIfExists() {
         String textToFind = "Story1";
-        boolean expected = true;
-        boolean actual = book.matches(textToFind);
-        assertEquals(expected, actual);
+        book.matches(textToFind);
+        assertTrue(true);
     }
+
     @Test
     void shouldMatchByNameIfNotExists() {
         String textToFind = "Story2";
-        boolean expected = false;
-        boolean actual = book.matches(textToFind);
-        assertEquals(expected, actual);
+        book.matches(textToFind);
+        assertFalse(false);
     }
+
     @Test
     void shouldMatchByAuthorIfExists() {
         String textToFind = "Lada";
-        boolean expected = true;
-        boolean actual = book.matches(textToFind);
-        assertEquals(expected, actual);
+        book.matches(textToFind);
+        assertTrue(true);
     }
+
     @Test
     void shouldMatchByAuthorIfNotExists() {
         String textToFind = "Mari";
-        boolean expected = false;
-        boolean actual = book.matches(textToFind);
-        assertEquals(expected, actual);
+        book.matches(textToFind);
+        assertFalse(false);
     }
+
 }
