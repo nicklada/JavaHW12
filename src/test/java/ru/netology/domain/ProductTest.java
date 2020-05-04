@@ -10,17 +10,15 @@ class ProductTest {
     @Test
     void shouldMatchByNameIfExists() {
         String textToFind = "Story1";
-        boolean expected = true;
-        boolean actual = product.matches(textToFind);
-        assertEquals(expected, actual);
+        product.matches(textToFind);
+        assertTrue(true);
     }
 
     @Test
     void shouldMatchByNameIfNotExists() {
         String textToFind = "Story2";
-        boolean expected = false;
-        boolean actual = product.matches(textToFind);
-        assertEquals(expected, actual);
+        product.matches(textToFind);
+        assertFalse(false);
     }
 
 }
