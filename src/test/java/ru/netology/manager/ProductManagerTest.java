@@ -14,19 +14,17 @@ class ProductManagerTest {
     ProductManager manager = new ProductManager(repository);
     Book first = new Book(1,"Story1",1000,"Lada");
     Book second = new Book(2,"Story2",2000,"Mari");
-    Book third = new Book(3,"Story3",3000,"Natali");
     Smartphone apple = new Smartphone(4,"Iphone",10000,"Apple");
     Smartphone nokia = new Smartphone(5,"New",10000,"Nokia");
-    Smartphone samsung = new Smartphone(6,"Galaxy",10000,"Samsung");
     Book fourth = new Book(7,"New",3000,"Peter");
 
    @BeforeEach
     void setup() {
         manager = new ProductManager(repository);
-        manager.ProductAdd(first);
-        manager.ProductAdd(second);
-        manager.ProductAdd(apple);
-        manager.ProductAdd(nokia);
+        manager.productAdd(first);
+        manager.productAdd(second);
+        manager.productAdd(apple);
+        manager.productAdd(nokia);
     }
 
     @Test
@@ -71,7 +69,6 @@ class ProductManagerTest {
         Product[] expected = new Product[]{apple};
         Product[] actual = manager.searchBy(textToFind);
         assertArrayEquals(expected, actual);
-
     }
 
     @Test
@@ -81,7 +78,6 @@ class ProductManagerTest {
         Product[] expected = new Product[]{nokia};
         Product[] actual = manager.searchBy(textToFind);
         assertArrayEquals(expected, actual);
-
     }
 
     @Test
@@ -91,7 +87,6 @@ class ProductManagerTest {
         Product[] expected = new Product[]{};
         Product[] actual = manager.searchBy(textToFind);
         assertArrayEquals(expected, actual);
-
     }
 
     @Test
@@ -101,18 +96,16 @@ class ProductManagerTest {
         Product[] expected = new Product[]{};
         Product[] actual = manager.searchBy(textToFind);
         assertArrayEquals(expected, actual);
-
     }
 
     @Test
     void shouldFindSmartAndBookWithTheSameName() {
-        manager.ProductAdd(fourth);
+        manager.productAdd(fourth);
         String textToFind = "New";
         manager.searchBy(textToFind);
         Product[] expected = new Product[]{nokia,fourth};
         Product[] actual = manager.searchBy(textToFind);
         assertArrayEquals(expected, actual);
-
     }
 
 }
